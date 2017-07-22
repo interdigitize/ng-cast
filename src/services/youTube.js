@@ -1,12 +1,12 @@
 angular.module('video-player')
-.service('youTube', function($http) {
+.service('youTube', function($http, $window) {
   this.search = function () {
     return $http({
       method: 'GET',
       url: 'https://www.googleapis.com/youtube/v3/search',
       
       params: {
-        key: window.YOUTUBE_API_KEY,
+        key: $window.YOUTUBE_API_KEY,
         part: 'snippet',
         q: 'puppy',
         type: 'video',

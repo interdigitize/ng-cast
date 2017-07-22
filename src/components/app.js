@@ -1,12 +1,12 @@
 angular.module('video-player')
 
 .component('app', {
-  // TODO\
   controller: function (youTube) {
-    this.videos = window.exampleVideoData;
-    // this.videos = youTube.search();
-    console.log(this.videos);
-    this.currentVideo = window.exampleVideoData[0];
+    youTube.search().then((response) => {
+      this.videos = response.data.items;
+      this.currentVideo = this.videos[0];
+    });
+
     this.selectVideo = (value) => {
       this.currentVideo = value;
     };
