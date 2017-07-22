@@ -3,7 +3,7 @@ angular.module('video-player')
   // TODO
   bindings: {
     video: '<', 
-    onClick: '<'
+    click: '<'
   },
   templateUrl: 'src/templates/videoListEntry.html',
 });
