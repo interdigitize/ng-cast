@@ -2,12 +2,12 @@ angular.module('video-player')
 
 .component('app', {
   // TODO\
-  controller: function () {
-    
-    // this.videos = $http.get();
+  controller: function (youTube) {
     this.videos = window.exampleVideoData;
+    // this.videos = youTube.search();
+    console.log(this.videos);
     this.currentVideo = window.exampleVideoData[0];
-    this.onClick = (value) => {
+    this.selectVideo = (value) => {
       this.currentVideo = value;
     };
   },
