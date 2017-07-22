@@ -1,6 +1,6 @@
 angular.module('video-player')
 .service('youTube', function($http, $window) {
-  this.search = function () {
+  this.search = function (query = 'sean spicer') {
     return $http({
       method: 'GET',
       url: 'https://www.googleapis.com/youtube/v3/search',
@@ -8,7 +8,7 @@ angular.module('video-player')
       params: {
         key: $window.YOUTUBE_API_KEY,
         part: 'snippet',
-        q: 'puppy',
+        q: query,
         type: 'video',
         maxResults: 5,
       }

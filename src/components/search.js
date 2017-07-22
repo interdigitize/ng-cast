@@ -1,10 +1,16 @@
 angular.module('video-player')
 
 .component('search', {
-  // controller: function {
-  //   this.result = () => {
-  //   }
-  // }
+  bindings: {
+    click: '<'
+  },
+  controller: function (youTube) {
+    this.query = '';
+    this.result = () => {
+      
+    };
+    
+  },
 
   templateUrl: 'src/templates/search.html',
 });
